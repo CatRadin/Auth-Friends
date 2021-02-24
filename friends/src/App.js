@@ -1,19 +1,18 @@
-import './App.css';
-import React from 'react'
-import { Route, Link, Switch, useHistory } from "react-router-dom";
-import Login from '../src/components/Login'
+import './App.css';  
+import { Route, Link, Switch } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import LoginPage from './components/Login';
+import Friends from './components.js/Friends';
+import PrivateRoute from './components/Dashboard';
 
 function App() {
   return (
     <div className="App">
-     <ul>
-       <li>
-          <Link to="/login">Login</Link>
-       </li>
-     </ul>
-     <Switch>
-       <Route path="login" component={Login} />
-     </Switch>
+      <NavBar />
+      <Switch>
+        <Route path="/login" component={LoginPage} />
+        <PrivateRoute exact path="/friends" component={Friends} />
+      </Switch>
     </div>
   );
 }
