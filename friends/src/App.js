@@ -2,8 +2,8 @@ import './App.css';
 import { Route, Link, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import LoginPage from './components/Login';
-import Friends from './components.js/Friends';
-import PrivateRoute from './components/Dashboard';
+import Friends from './components/Friends';
+import PrivateRoute from './components/Friends';
 
 function App() {
   return (
