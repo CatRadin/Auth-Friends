@@ -13,7 +13,6 @@ function Login() {
     const history = useHistory();
 
 
-
     //State Here --------------------------------------------------------------------------
     const [credentials, setCredentials ] = useState (initialValues)
 
@@ -21,8 +20,8 @@ function Login() {
 
     //On Change Here------------------------------------------------------------------------
     const onChange = (evt) => {
-        //Prevents a Page Refresh--------
-        evt.preventDefault();
+        
+        //This takes credentials and spreads them then sets the state
         setCredentials(
              {
                 ...credentials,
@@ -34,6 +33,7 @@ function Login() {
 
     //Login Here -----------------
     const login = (evt) => {
+        //Prevents a Page Refresh--------
         evt.preventDefault();
 
         //A Post that will call to login - Post
@@ -51,10 +51,6 @@ function Login() {
                 setError(err.response.data.error)
             })
     }
-
-    
-
-
 
     return(
         <div className="login-container">

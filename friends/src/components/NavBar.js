@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom'
+
 function NavBar() {
+
+    const history = useHistory();
+
+
+    //Logout -------------- Removes Token then reroutes you
+    const logout = () => {
+        localStorage.removeItem('token');
+      history.push('/');
+      };
 
   return (
     <div className="nav-bar">
@@ -17,7 +29,7 @@ function NavBar() {
           </Link>
         </li>
         <li>
-          <Link className="nav-link">Log Out</Link>
+          <Link onClick={logout} className="nav-link">Log Out</Link>
         </li>
       </ul>
     </div>
